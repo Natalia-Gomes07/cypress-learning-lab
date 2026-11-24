@@ -1,0 +1,16 @@
+# Dependências
+node_modules/
+
+# Cypress - arquivos gerados
+cypress/screenshots/
+cypress/videos/
+cypress/reports/
+
+# Relatórios
+mochawesome-report/
+mochawesome.json
+
+# Variáveis de ambiente e credenciais
+.env
+.env.*
+cypress.env.json
