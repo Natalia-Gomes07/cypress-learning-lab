@@ -49,7 +49,7 @@ describe('Cadastro de usuário', () => {
         cadastro_usuario_page.preencheEmail(faker.internet.email())
         cadastro_usuario_page.preencheSenha('123456')
         cadastro_usuario_page.clicarCadastrar()
-        cadastro_usuario_page.validarMensagemSucesso(name)
+        cadastro_usuario_page.validarMensagemSucesso('Usuário Incorreo')
     })
     
 })
