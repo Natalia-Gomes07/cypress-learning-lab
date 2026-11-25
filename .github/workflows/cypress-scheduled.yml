@@ -2,7 +2,7 @@
 name: Cypress E2E Tests - Scheduler
 
 on:
-  - schedule: 
+  schedule: 
     - cron: '0 18 * * 1-5'
       timezone: 'America/Sao_Paulo'
 
