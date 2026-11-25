@@ -1,0 +1,36 @@
+
+name: Cypress E2E Tests - Scheduler
+
+on:
+  - schedule: 
+    - cron: '0 18 * * 1-5'
+      timezone: 'America/Sao_Paulo'
+
+permissions:
+  contents: read
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v5
+
+      - name: Executar testes Cypress
+        uses: cypress-io/github-action@v7
+        with:
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publicar relatório Mochawesome
+        if: always()
+        uses: actions/upload-artifact@v4
+        with: 
+          name: relatório-mochawesome
+          path: cypress/reports/html/
+          if-no-files-found: error
+
+
