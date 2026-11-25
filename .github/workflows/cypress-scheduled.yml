@@ -2,7 +2,8 @@
 name: Cypress E2E Tests - Scheduler
 
 on:
-  - schedule: 
+  workflow_dispatch:
+  schedule: 
     - cron: '0 18 * * 1-5'
       timezone: 'America/Sao_Paulo'
 
